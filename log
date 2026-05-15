@@ -115,3 +115,17 @@ graph.c:51:1: error: control reaches end of non-void function [-Werror=return-ty
       | ^
 cc1: all warnings being treated as errors
 d10d19a
+Fri May 15 06:44:06 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:50:27: error: invalid use of incomplete typedef ‘Map’
+   50 |     return g->adjacencyMap->edges;
+      |                           ^~
+graph.c:51:1: error: control reaches end of non-void function [-Werror=return-type]
+   51 | }
+      | ^
+cc1: all warnings being treated as errors
+525000c
