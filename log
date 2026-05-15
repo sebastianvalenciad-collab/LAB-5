@@ -76,3 +76,18 @@ Fri May 15 06:38:59 PM UTC 2026:
 Fri May 15 06:40:04 PM UTC 2026: 
  tests:  0|0
 cdca0d2
+Fri May 15 06:42:55 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:50:15: error: ‘Graph’ has no member named ‘adjacencyMaps’; did you mean ‘adjacencyMap’?
+   50 |     return g->adjacencyMaps;
+      |               ^~~~~~~~~~~~~
+      |               adjacencyMap
+graph.c:51:1: error: control reaches end of non-void function [-Werror=return-type]
+   51 | }
+      | ^
+cc1: all warnings being treated as errors
+09ffc83
