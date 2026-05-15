@@ -51,3 +51,20 @@ list.h:14:7: note: declared here
    14 | void *list_next(List *L);
       |       ^~~~~~~~~
 29519c9
+Fri May 15 06:38:47 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:63:26: error: passing argument 1 of ‘list_next’ from incompatible pointer type [-Wincompatible-pointer-types]
+   63 |         edge = list_next(edge);
+      |                          ^~~~
+      |                          |
+      |                          Edge *
+In file included from graph.h:4,
+                 from graph.c:6:
+list.h:14:23: note: expected ‘List *’ but argument is of type ‘Edge *’
+   14 | void *list_next(List *L);
+      |                 ~~~~~~^
+93b1b5b
