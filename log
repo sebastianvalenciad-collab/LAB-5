@@ -157,3 +157,11 @@ graph.c:50:12: error: returning ‘MapPair *’ from a function with incompatibl
    50 |     return map_search(g->adjacencyMap, (void*)label);
       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 569beda
+Fri May 15 06:47:41 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:50:12: error: returning ‘MapPair *’ from a function with incompatible return type ‘List *’ [-Wincompatible-pointer-types]
+   50 |     return map_search(g->adjacencyMap, (void*)label);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+c1d3bc4
