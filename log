@@ -36,3 +36,18 @@ Fri May 15 06:07:31 PM UTC 2026:
 Fri May 15 06:34:03 PM UTC 2026: 
  tests:  0|0
 9744e96
+Fri May 15 06:38:35 PM UTC 2026: 
+ graph.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:63:16: error: too few arguments to function ‘list_next’
+   63 |         edge = list_next();
+      |                ^~~~~~~~~
+In file included from graph.h:4,
+                 from graph.c:6:
+list.h:14:7: note: declared here
+   14 | void *list_next(List *L);
+      |       ^~~~~~~~~
+29519c9
