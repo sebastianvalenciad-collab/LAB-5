@@ -129,3 +129,21 @@ graph.c:51:1: error: control reaches end of non-void function [-Werror=return-ty
       | ^
 cc1: all warnings being treated as errors
 525000c
+Fri May 15 06:46:28 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:50:40: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   50 |     return map_search(g->adjacencyMap, label);
+      |                                        ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:50:12: error: returning ‘MapPair *’ from a function with incompatible return type ‘List *’ [-Wincompatible-pointer-types]
+   50 |     return map_search(g->adjacencyMap, label);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+712ddf5
