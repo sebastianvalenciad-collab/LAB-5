@@ -33,7 +33,7 @@ Graph* createGraph()
 
     grafo->adjacencyMap = map_create(is_equal_string);
 
-    return NULL;
+    return grafo;
 }
 
 void addNode(Graph* g, const char* label) {
