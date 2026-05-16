@@ -184,3 +184,14 @@ Sat May 16 04:34:47 AM UTC 2026:
  tests:  2|4
 ========================================
 c439f7f
+Sat May 16 10:14:04 PM UTC 2026: 
+ graph.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:34:5: error: ‘g’ undeclared (first use in this function)
+   34 |     g->adjacencyMap = map_create(is_equal_string);
+      |     ^
+graph.c:34:5: note: each undeclared identifier is reported only once for each function it appears in
+d8f4ccd
