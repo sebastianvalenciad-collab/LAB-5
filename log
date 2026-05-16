@@ -297,3 +297,27 @@ graph.c:51:19: error: initialization of ‘List *’ from incompatible pointer t
    51 |     List* edges = map_search(g->adjacencyMap, (void*)src);
       |                   ^~~~~~~~~~
 0bafc2e
+Sat May 16 10:39:11 PM UTC 2026: 
+ graph.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:51:48: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   51 |     MapPair pair = map_search(g->adjacencyMap, src);
+      |                                                ^~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:51:20: error: invalid initializer
+   51 |     MapPair pair = map_search(g->adjacencyMap, src);
+      |                    ^~~~~~~~~~
+graph.c:52:13: error: invalid operands to binary == (have ‘MapPair’ and ‘void *’)
+   52 |     if(pair == NULL) return;
+      |             ^~
+graph.c:54:31: error: invalid type argument of ‘->’ (have ‘MapPair’)
+   54 |     List* edges = (List*) pair->value;
+      |                               ^~
+cc1: all warnings being treated as errors
+86bd6ef
