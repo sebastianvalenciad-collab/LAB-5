@@ -337,3 +337,17 @@ graph.c:54:31: error: invalid type argument of ‘->’ (have ‘MapPair’)
    54 |     List* edges = (List*) pair->value;
       |                               ^~
 4591904
+Sat May 16 10:39:47 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:51:20: error: invalid initializer
+   51 |     MapPair pair = map_search(g->adjacencyMap, (void*)src);
+      |                    ^~~~~~~~~~
+graph.c:52:13: error: invalid operands to binary == (have ‘MapPair’ and ‘void *’)
+   52 |     if(pair == NULL) return;
+      |             ^~
+graph.c:54:30: error: invalid type argument of ‘->’ (have ‘MapPair’)
+   54 |     List* edges = (List*)pair->value;
+      |                              ^~
+d1def7b
