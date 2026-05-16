@@ -351,3 +351,18 @@ graph.c:54:30: error: invalid type argument of ‘->’ (have ‘MapPair’)
    54 |     List* edges = (List*)pair->value;
       |                              ^~
 d1def7b
+Sat May 16 10:40:28 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:51:49: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   51 |     MapPair* pair = map_search(g->adjacencyMap, src);
+      |                                                 ^~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+cc1: all warnings being treated as errors
+8572af6
