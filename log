@@ -233,3 +233,21 @@ Sat May 16 10:21:47 PM UTC 2026:
  tests:  7|2
 ========================================
 8a8bb70
+Sat May 16 10:32:46 PM UTC 2026: 
+ graph.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:50:47: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   50 |     List* edges = map_search(g->adjacencyMap, src);
+      |                                               ^~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:50:19: error: initialization of ‘List *’ from incompatible pointer type ‘MapPair *’ [-Wincompatible-pointer-types]
+   50 |     List* edges = map_search(g->adjacencyMap, src);
+      |                   ^~~~~~~~~~
+cc1: all warnings being treated as errors
+092f5a4
