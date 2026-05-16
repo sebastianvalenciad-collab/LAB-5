@@ -279,3 +279,13 @@ graph.c:50:19: error: initialization of ‘List *’ from incompatible pointer t
       |                   ^~~~~~~~~~
 cc1: all warnings being treated as errors
 bd8706e
+Sat May 16 10:33:54 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:50:19: error: initialization of ‘List *’ from incompatible pointer type ‘MapPair *’ [-Wincompatible-pointer-types]
+   50 |     List* edges = map_search(g->adjacencyMap, (void*)src);
+      |                   ^~~~~~~~~~
+2ca0a61
