@@ -47,25 +47,25 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
 List* getEdges(Graph* g, const char* label) {
     if (!g || !label) return NULL;
 
-    MapPair* pair = map_search(g->adjacencyMap, (void*)label);
-    if(pair == NULL) return NULL;
-    return pair->value;
+    MapPair* pair = map_search(g->adjacencyMap, (void*)label); // buscamos el vertice en el map
+    if(pair == NULL) return NULL; // verificamos que no sea null
+    return pair->value; // retornamos la lista de aristas asociadas al vertice
 }
 
-int getWeight(Graph* g, const char* label1, const char* label2) {
+int getWeight(Graph* g, const char* label1, const char* label2) { // obtener peso de la arista que conecta b1 a b2
     if (!g || !label1 || !label2) return -1;
     
-    List* edges = getEdges(g, label1);
-    if(edges == NULL) return -1;
+    List* edges = getEdges(g, label1); //aristas origen osea que salen desde label
+    if(edges == NULL) return -1; // si el v no existe f
 
-    Edge* edge = list_first(edges);
+    Edge* edge = list_first(edges); // tomamos la primera arista
     while(edge != NULL)
     {
-        if(strcmp(edge->target, label2) == 0) return edge->weight;
+        if(strcmp(edge->target, label2) == 0) return edge->weight; // si el destino coincide retorna el peso de la arista
         edge = list_next(edges);
     }
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
-    return -1;
+    return -1; // no existe conexion
 }
 
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
