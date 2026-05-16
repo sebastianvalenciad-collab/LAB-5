@@ -97,7 +97,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
         edge = list_next(edges); 
     }
 
-    return NULL; 
+    return labels; 
 }
 
 void destroyGraph(Graph* g) {
