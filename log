@@ -206,3 +206,18 @@ Sat May 16 10:14:44 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 32887d3
+Sat May 16 10:21:18 PM UTC 2026: 
+ graph.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:44:5: error: variable ‘edges’ has initializer but incomplete type
+   44 |     List edges = list_create();
+      |     ^~~~
+graph.c:44:10: error: storage size of ‘edges’ isn’t known
+   44 |     List edges = list_create();
+      |          ^~~~~
+graph.c:44:10: error: unused variable ‘edges’ [-Werror=unused-variable]
+cc1: all warnings being treated as errors
+e90e0ee
